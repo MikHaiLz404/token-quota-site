@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Token Quota</title>
+<meta name="description" content="Token Quota collects nothing. Everything it reads stays on your Mac.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">Token Quota</a>
+    <nav class="site">
+      <a href="./">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Privacy Policy</h1>
+  <p class="lede">Token Quota collects nothing. Everything it reads stays on your Mac.</p>
+  <p class="meta">Last updated: 5 August 2026</p>
+
+  <div class="callout">
+    <p><strong>No accounts. No servers. No analytics.</strong> The developer receives no data about
+    you, your Mac, or your usage. There is no tracking of any kind, and no advertising or analytics
+    SDK is present in the app.</p>
+  </div>
+
+  <h2>What the app does</h2>
+  <p>Token Quota shows how much of your own AI subscription allowance remains. It reads only what
+  each provider reports, and only for providers you explicitly connect.</p>
+
+  <h2>Where your data lives</h2>
+  <p>Everything Token Quota holds stays on your Mac: the latest quota reading for each provider you
+  connected, your provider connection settings, and — for connections that need one — a credential
+  stored in the macOS Keychain, reachable only by Token Quota. Nothing is synchronized to iCloud or
+  to any other service.</p>
+
+  <h2>Providers you connect</h2>
+
+  <h3>Codex</h3>
+  <p>After you grant access to your Codex folder once, Token Quota reads the quota record Codex
+  writes there. No network request is made, and no Codex credential is requested or stored.</p>
+
+  <h3>Claude Account</h3>
+  <p>You sign in to Claude yourself, in a browser window inside Token Quota that is separate from
+  Safari, Chrome, and Claude Code. Only the resulting Claude session is kept, in Token Quota's
+  Keychain, and it is used only for read-only quota requests to Claude. Token Quota never sends a
+  prompt, never reads another app's credentials, and never accepts a pasted cookie or password.</p>
+
+  <h3>Antigravity (AGY CLI)</h3>
+  <p>After you grant access to the AGY CLI folder once and approve a single change to its status-line
+  setting, Token Quota reads your quota from a small file that AGY CLI writes on your Mac. That file
+  contains only remaining-quota values, reset times, and a timestamp — never your account, your
+  prompts, or your work. No network request is made.</p>
+
+  <h3>OpenRouter API Usage</h3>
+  <p>If you choose to add an OpenRouter API key, it is stored in Token Quota's Keychain and used for
+  exactly one read-only request to OpenRouter to retrieve that key's own credit usage.</p>
+
+  <h2>What we never do</h2>
+  <p>We never send your prompts, files, conversations, or work anywhere. We never read another
+  application's stored credentials. We never estimate a quota you did not have, and we never show an
+  unavailable reading as zero.</p>
+
+  <h2>Diagnostics</h2>
+  <p>If you choose to export diagnostics, the export is created on your Mac and shared only by you.
+  It deliberately excludes your account identity, credentials, file paths, and raw provider
+  responses.</p>
+
+  <h2>Purchases</h2>
+  <p>Token Quota Pro is a one-time in-app purchase handled entirely by Apple. We receive no payment
+  details.</p>
+
+  <h2>Deleting your data</h2>
+  <p>Disconnecting a provider removes its stored credential and its local reading. Deleting the app
+  removes everything else Token Quota stored on your Mac.</p>
+
+  <h2>Children</h2>
+  <p>Token Quota is not directed at children and collects no data from anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the updated version is published at this address with a new date.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:jojo.in.runtime@gmail.com">jojo.in.runtime@gmail.com</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 jojo.in.runtime</p>
+    <p><a href="./">Support</a> · <a href="privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

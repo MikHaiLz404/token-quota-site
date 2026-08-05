@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Token Quota</title>
+<meta name="description" content="How Token Quota reads each provider's subscription quota, how to connect and disconnect, and how to get help.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">Token Quota</a>
+    <nav class="site">
+      <a href="./" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Support</h1>
+  <p class="lede">Token Quota shows how much of your own AI subscription allowance remains — on your
+  Mac, in a companion app and in widgets.</p>
+
+  <div class="callout">
+    <p><strong>Need help?</strong> Email
+    <a href="mailto:jojo.in.runtime@gmail.com">jojo.in.runtime@gmail.com</a>. Including a redacted
+    diagnostics export (see below) usually answers the first three questions at once.</p>
+  </div>
+
+  <h2>Where the numbers come from</h2>
+  <p>Every value Token Quota shows was reported by the provider itself. The app never estimates a
+  quota, never invents a reset time or a period the provider did not report, and never shows an
+  unavailable reading as zero — if something cannot be read, it says so instead.</p>
+  <p>A reading that has gone stale is marked stale rather than quietly presented as current.</p>
+
+  <h2>Connecting and disconnecting a provider</h2>
+
+  <h3>Codex</h3>
+  <p><strong>Connect:</strong> Token Quota asks once for read access to your <code>~/.codex</code>
+  folder, so it can read the quota record Codex writes there. You pick the folder yourself; that is
+  the whole setup.</p>
+  <p><strong>Disconnect:</strong> revoke the folder access from Settings. Token Quota never asks for
+  a Codex password or token — you sign in to Codex the normal way, in Codex.</p>
+  <p>If you have never run Codex on this Mac there is no record to read yet. That is not an error and
+  not zero quota.</p>
+
+  <h3>Claude Account</h3>
+  <p><strong>Connect:</strong> in Settings, enter the email of your claude.ai account and choose
+  <em>Add account</em>. Token Quota opens Claude's own sign-in page in a browser window that belongs
+  to Token Quota alone — separate from Safari, Chrome, and Claude Code. Claude emails you a
+  verification code; you type it into Claude's page in that window. Never paste a cookie or password
+  into Token Quota; there is nowhere to do so, by design.</p>
+  <p><strong>Disconnect:</strong> <em>Remove account</em>. That deletes the stored session from the
+  Keychain, clears Token Quota's own web data for Claude, and forgets the email.</p>
+  <p>If your account has no subscription allowance to track — an API-key-only session, for example —
+  Token Quota shows <strong>No Subscription Quota</strong>. That is a healthy state, not an error.</p>
+
+  <h3>Antigravity (AGY CLI)</h3>
+  <p><strong>Connect:</strong> choose <em>Connect AGY…</em>. Token Quota opens one folder picker at
+  <code>~/.gemini/antigravity-cli</code>, then shows you the exact current and proposed value of the
+  single <code>statusLine</code> setting and asks for one confirmation. Nothing is written before you
+  confirm. AGY CLI then writes a quota-only file that Token Quota reads.</p>
+  <p><strong>Disconnect:</strong> <em>Disconnect AGY…</em> restores your previous status-line value
+  and forgets the folder. If you changed the status line yourself after setup, your newer value is
+  kept.</p>
+  <p>Quota appears after AGY CLI next updates its status line — until then Token Quota says it is
+  waiting for provider activity.</p>
+
+  <h3>OpenRouter API Usage</h3>
+  <p>API Usage is metered spending, not subscription quota, and it appears on no widget. Open
+  <em>API Usage</em>, read what it will do, accept it, and supply your own OpenRouter key; it is
+  stored in the Keychain and used for one read-only request. Disconnecting deletes the key first,
+  then the local reading.</p>
+
+  <h2>Widgets</h2>
+  <p>Add a Token Quota widget from the macOS widget gallery in small, medium, or large size. The
+  large <strong>All Providers</strong> view is part of Pro. Widgets are read-only: they show the
+  latest reading the app saved, and they never reach the network or display account identity.</p>
+  <p>If a placed widget stops updating, open Token Quota — the app is what refreshes it. Keeping
+  widgets fresh in the background requires the app to stay resident, which it asks your permission
+  for during setup.</p>
+
+  <h2>Exporting redacted diagnostics</h2>
+  <p>Open <strong>Diagnostics</strong> in the app and export. The export is created on your Mac and
+  shared only if you send it. It deliberately excludes your account identity, credentials, file
+  paths, and raw provider responses — it carries connection states, timestamps, and classified
+  failures, which is what a bug report needs.</p>
+
+  <h2>Privacy</h2>
+  <p>Token Quota collects nothing and sends nothing to its developer. Read the full
+  <a href="privacy.html">privacy policy</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 jojo.in.runtime</p>
+    <p><a href="mailto:jojo.in.runtime@gmail.com">jojo.in.runtime@gmail.com</a> ·
+    <a href="privacy.html">Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
