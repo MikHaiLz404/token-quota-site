@@ -59,17 +59,6 @@
   <p>If your account has no subscription allowance to track — an API-key-only session, for example —
   Token Quota shows <strong>No Subscription Quota</strong>. That is a healthy state, not an error.</p>
 
-  <h3>Antigravity (AGY CLI)</h3>
-  <p><strong>Connect:</strong> choose <em>Connect AGY…</em>. Token Quota opens one folder picker at
-  <code>~/.gemini/antigravity-cli</code>, then shows you the exact current and proposed value of the
-  single <code>statusLine</code> setting and asks for one confirmation. Nothing is written before you
-  confirm. AGY CLI then writes a quota-only file that Token Quota reads.</p>
-  <p><strong>Disconnect:</strong> <em>Disconnect AGY…</em> restores your previous status-line value
-  and forgets the folder. If you changed the status line yourself after setup, your newer value is
-  kept.</p>
-  <p>Quota appears after AGY CLI next updates its status line — until then Token Quota says it is
-  waiting for provider activity.</p>
-
   <h3>OpenRouter API Usage</h3>
   <p>API Usage is metered spending, not subscription quota, and it appears on no widget. Open
   <em>API Usage</em>, read what it will do, accept it, and supply your own OpenRouter key; it is
